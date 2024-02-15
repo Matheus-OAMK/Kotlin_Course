@@ -15,9 +15,11 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.example.weather_app.R
 import com.example.weather_app.model.Coord
 import com.example.weather_app.viewmodel.CurrentWeatherViewModel
 import com.example.weather_app.viewmodel.WeatherUiState
@@ -25,7 +27,7 @@ import com.example.weather_app.viewmodel.WeatherUiState
 @Composable
 fun WeatherView(navController : NavController, currentLocation: Coord) {
     Scaffold (
-        topBar = { TopBar(title = "Weather Info", navController = navController )},
+        topBar = { TopBar(title = stringResource(R.string.app_name), navController = navController )},
 
         content =  {
             Box(modifier = Modifier.padding(it)) {

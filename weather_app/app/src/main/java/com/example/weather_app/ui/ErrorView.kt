@@ -7,12 +7,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.example.weather_app.R
 
 
 @Composable
 fun ErrorView() {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text("Failed to load weather data", style = MaterialTheme.typography.titleLarge)
+        Text(stringResource(R.string.error_screen_text), style = MaterialTheme.typography.titleLarge)
     }
 }
 

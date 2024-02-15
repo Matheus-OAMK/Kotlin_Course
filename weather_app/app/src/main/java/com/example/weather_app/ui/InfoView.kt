@@ -18,19 +18,23 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-
+import com.example.weather_app.R
 
 
 @Composable
 fun InfoView(navController: NavController) {
     Scaffold (
-        topBar = { InfoTopBar(title = "App Info" , navController =navController ) },
+        topBar = { InfoTopBar(title = stringResource(R.string.app_name) , navController =navController ) },
         content = {
-            Box(modifier = Modifier.fillMaxSize().padding(it).padding(horizontal = 10.dp), contentAlignment = Alignment.Center) {
-                Text("This is a basic app that fetches the openweather API and displays weather info based on user location", style = MaterialTheme.typography.titleLarge)
+            Box(modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
+                .padding(horizontal = 10.dp), contentAlignment = Alignment.Center) {
+                Text(stringResource(R.string.info_text_about_the_app), style = MaterialTheme.typography.titleLarge)
             }
         }
     )
